@@ -5,9 +5,7 @@ name: Python Tests (Pytest)
 
 on:
   push:
-    branches: [ "testing" ]
-  pull_request:
-    branches: [ "production" ]
+    branches: [ "*" ]
 
 permissions:
   contents: read
