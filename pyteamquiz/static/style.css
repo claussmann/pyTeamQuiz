@@ -26,6 +26,13 @@ h3 {
     font-size: 22px;
 }
 
+input[type=text]{
+    padding: 7px 10px;
+    margin: 5px 2px;
+    display: inline-block;
+    border: 1px solid #868686;
+    border-radius: 6px;
+}
 
 /*
  Title
@@ -64,12 +71,12 @@ h3 {
 }
 
 .points-btn-current-turn {
-    background-color: aqua;
+    background-color: rgb(0, 150, 219);
     border: 5px solid #0f0f0f;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 26px;
+    font-size: 30px;
     font-weight: 600;
     padding: 7px 12px;
     border-radius: 4px;
@@ -81,24 +88,32 @@ h3 {
 */
 
 .content {
-    width: 100vw;
-    padding: 20px 20px;
+    padding: 20px 0px;
     text-align: center;
+    width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media screen and (max-width: 750px){
+    .content {
+        width: 100vw;
+    }
 }
 
 .continue-btn {
     background-color: rgb(0, 167, 0);
-    border: 2px solid #ffffff;
+    color: white;
+    border: none;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 18px;
     padding: 7px 12px;
-    color: black;
+    border-radius: 6px;
 }
 
 .answer-btn {
-    background-color: rgb(221, 121, 221);
+    background-color: rgb(180, 75, 180);
     border: 2px solid #0f0f0f;
     text-align: center;
     text-decoration: none;
@@ -114,7 +129,7 @@ h3 {
 }
 
 .answer-btn-correct {
-    background-color: rgb(52, 236, 82);
+    background-color: rgb(23, 187, 50);
     border: 2px solid #0f0f0f;
     text-align: center;
     text-decoration: none;
@@ -130,7 +145,7 @@ h3 {
 }
 
 .answer-btn-would-be-correct {
-    background-color: rgb(207, 197, 47);
+    background-color: rgb(165, 154, 4);
     border: 2px solid #0f0f0f;
     text-align: center;
     text-decoration: none;

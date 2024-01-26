@@ -16,7 +16,7 @@
         <input type="text" name="teams[]" placeholder="Team 5"><br>
         <br>
         {% for x in catalogue_names %}
-        <input type="checkbox" name="catalogues[]" value="{{ x }}"> {{ x }}
+        <nobr><input type="checkbox" name="catalogues[]" value="{{ x }}"> {{ x }}</nobr>
         {% endfor %}
         <br>
         <br>
