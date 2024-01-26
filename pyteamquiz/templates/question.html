@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="question">
+    <h2>{{ question_text }}</h2>
+
+    <div id="answers">
+        {% for opt in options %}
+            <form action="/{{game_id}}/answer" method="post">
+                <button class="answer-btn" type="submit" name="anwer" value="{{ opt }}">{{ opt }}</button>
+            </form>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

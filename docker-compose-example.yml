@@ -1,0 +1,12 @@
+version: "3"
+services:
+  webserver:
+    build: .
+    container_name: pyteamquiz
+    ports:
+      - "80:8000"
+    volumes:
+      # Change the first part (./questions) to the location where your questions are placed on your machine
+      - ./questions:/App/questions
+    environment:
+      - QUESTION_CATALOGUE_DIR=/App/questions/

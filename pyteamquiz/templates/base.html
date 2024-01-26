@@ -1,0 +1,42 @@
+<!-- Created by Christian Laußmann in 2024-->
+<!-- Copyrigth (C) 2024 Christian Laußmann -->
+<!-- https://github.com/claussmann/pyTeamQuiz -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>pyTeamQuiz</title>
+        <meta charset="utf-8">
+        <link href="{{ url_for('static', filename= 'style.css') }}" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <!-- Title Bar -->
+        <div class="header">
+            <a href="/" style="font-size: 35px; color: black; text-decoration: none;">pyTeamQuiz</a>
+        </div>
+
+        <div class="points">
+            {% if current_scores is defined %}
+            {% for team,score in current_scores.items() %}
+                {% if whose_turn is defined %}
+                {% if whose_turn == team %}
+                <button disabled class="points-btn-current-turn">{{ team }}: {{ score }}</button>
+                {% else %}
+                <button disabled class="points-btn">{{ team }}: {{ score }}</button>
+                {% endif %}
+                {% endif %}
+            {% endfor %}
+            {% endif %}
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body>
+
+</html>

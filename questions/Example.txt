@@ -1,0 +1,5 @@
+# Format: Question;;Correct Answer;;Fake Answer 1;; Fake Answer 2;; Fake Answer 3
+# Up to 10 answers are supported.
+
+How long does it take the light to get from sun to earth?;;500 seconds;;1 minute;;300 milliseconds;;2 hours
+What is a prime number?;;13;;12;;19;;25;;4
