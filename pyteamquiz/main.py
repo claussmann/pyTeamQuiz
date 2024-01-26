@@ -1,5 +1,6 @@
 from flask import Flask, redirect, render_template, request
 from . import service
+from .errors import *
 
 app = Flask(__name__)
 
@@ -12,7 +13,10 @@ def start():
 def new_game():
     selected = set(filter(len, request.form.getlist('catalogues[]')))
     teams = set(filter(len, request.form.getlist('teams[]')))
-    game_id = service.new_game(selected, teams)
+    try:
+        game_id = service.new_game(selected, teams)
+    except NotEnoughQuestionsError:
+        return "<p>It seems you must select more questions.</p>"
     return render_template('created.html', game_id=game_id)
 
 @app.route("/<game_id>/question", methods=["GET"])

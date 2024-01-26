@@ -9,3 +9,6 @@ class AnswerSizeError(Exception):
 
 class QuestionSizeError(Exception):
     pass
+
+class NotEnoughQuestionsError(Exception):
+    pass

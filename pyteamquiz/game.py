@@ -15,6 +15,14 @@ class Game():
             team: 0
             for team in self.teams
         }
+
+        # Ensure each player gets the same number of questions
+        if len(self.questions) <= len(self.teams):
+            raise NotEnoughQuestionsError("You have fewer questions than teams.")
+        pick_questions = len(self.questions) - len(self.questions) % len(self.teams)
+        self.questions = self.questions[:pick_questions]
+
+        # Init
         self.round = 0
         self.current_question = None
         self._next_question()

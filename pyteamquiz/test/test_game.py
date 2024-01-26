@@ -57,3 +57,28 @@ def test_game_error_when_questions_empty():
     with pytest.raises(OutOfQuestionError):
         g.get_question()
 
+def test_game_exception_when_too_few_questions():
+    # Fewer questions than teams
+    with pytest.raises(NotEnoughQuestionsError):
+        g = Game(
+            {},
+            {"Team A", "Team B", "Team C"}
+        )
+    with pytest.raises(NotEnoughQuestionsError):
+        g = Game(
+            {get_catalogue_1()},
+            {"Team A", "Team B", "Team C"}
+        )
+
+def test_game_every_player_same_number_questions():
+    # Only 4 questions for 3 teams
+    g = Game(
+        {get_catalogue_1(), get_catalogue_2()},
+        {"Team A", "Team B", "Team C"}
+        )
+    g.submit_answer("A")
+    g.get_question()
+    g.submit_answer("A")
+    g.get_question()
+    g.submit_answer("A")
+    assert not g.has_next()
