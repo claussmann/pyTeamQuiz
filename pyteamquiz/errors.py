@@ -12,3 +12,6 @@ class QuestionSizeError(Exception):
 
 class NotEnoughQuestionsError(Exception):
     pass
+
+class NotEnoughTeamsError(Exception):
+    pass

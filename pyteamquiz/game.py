@@ -16,6 +16,10 @@ class Game():
             for team in self.teams
         }
 
+        # Ensure there are at least 2 teams
+        if len(self.teams) < 2:
+            raise NotEnoughTeamsError("At least two teams are required.")
+
         # Ensure each player gets the same number of questions
         if len(self.questions) <= len(self.teams):
             raise NotEnoughQuestionsError("You have fewer questions than teams.")

@@ -15,8 +15,8 @@ def new_game():
     teams = set(filter(len, request.form.getlist('teams[]')))
     try:
         game_id = service.new_game(selected, teams)
-    except NotEnoughQuestionsError:
-        return "<p>It seems you must select more questions.</p>"
+    except (NotEnoughQuestionsError, NotEnoughTeamsError) as e:
+        return "<h1>ERROR: %s</h1>" % str(e)
     return render_template('created.html', game_id=game_id)
 
 @app.route("/<game_id>/question", methods=["GET"])

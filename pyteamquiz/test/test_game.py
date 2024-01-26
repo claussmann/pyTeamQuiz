@@ -82,3 +82,15 @@ def test_game_every_player_same_number_questions():
     g.get_question()
     g.submit_answer("A")
     assert not g.has_next()
+
+def test_game_at_least_two_teams():
+    with pytest.raises(NotEnoughTeamsError):
+        g = Game(
+            {get_catalogue_1()},
+            {}
+        )
+    with pytest.raises(NotEnoughTeamsError):
+        g = Game(
+            {get_catalogue_1()},
+            {"Team A"}
+        )
