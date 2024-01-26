@@ -14,4 +14,4 @@ if os.path.isdir(question_catalogue_dir):
         if filename.endswith(".txt")
     }
 else:
-    catalogues = set()
+    catalogues = dict()
