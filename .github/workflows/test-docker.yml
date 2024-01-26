@@ -1,0 +1,13 @@
+name: Verify that docker image can be produced.
+
+on:
+  push:
+    branches: ["testing"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: docker build .
