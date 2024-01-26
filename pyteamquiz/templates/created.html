@@ -4,7 +4,28 @@
 <h1>Game started!</h1>
 
 <p>
-    <a href="/{{game_id}}/question"><button class="continue-btn">First Question</button></a>
+    <a href="/{{game_id}}/question"><button class="continue-btn">First Question <span id="seconds_id">(3)</span></button></a>
 </p>
 
+{% endblock %}
+
+{% block javascripts %}
+<script>
+
+var seconds = 3;
+var interval = setInterval(
+    () => {
+        seconds -= 1;
+        if(seconds <= 0){
+            clearInterval(interval);
+            window.location.href = "/{{game_id}}/question";
+        }
+        else{
+            document.getElementById("seconds_id").innerHTML = `(${seconds})`;
+        }
+    },
+    1000
+);
+
+</script>
 {% endblock %}

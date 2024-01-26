@@ -13,7 +13,28 @@
     </p>
     {% endif %}
     <p>
-        <a href="/{{game_id}}/question"><button class="continue-btn">Next Question</button></a>
+        <a href="/{{game_id}}/question"><button class="continue-btn">Next Question <span id="seconds_id">(9)</span></button></a>
     </p>
 </div>
+{% endblock %}
+
+{% block javascripts %}
+<script>
+
+var seconds = 9;
+var interval = setInterval(
+    () => {
+        seconds -= 1;
+        if(seconds <= 0){
+            clearInterval(interval);
+            window.location.href = "/{{game_id}}/question";
+        }
+        else{
+            document.getElementById("seconds_id").innerHTML = `(${seconds})`;
+        }
+    },
+    1000
+);
+
+</script>
 {% endblock %}
