@@ -1,14 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1>Welcome to pyTeamQuiz</h1>
-
-<p>
-    Please fill the form to start a new game:
-</p>
+<h1>Welcome to <i>pyTeamQuiz</i></h1>
 
 <div id="select_catalogs">
     <form action="/" method="post">
+        Enter at least two team names:
+        <br>
+        <br>
         <input type="text" name="teams[]" placeholder="*Team 1" required><br>
         <input type="text" name="teams[]" placeholder="*Team 2" required><br>
         <input type="text" name="teams[]" placeholder="Team 3"><br>
