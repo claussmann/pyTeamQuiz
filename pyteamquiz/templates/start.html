@@ -15,8 +15,11 @@
         <input type="text" name="teams[]" placeholder="Team 4"><br>
         <input type="text" name="teams[]" placeholder="Team 5"><br>
         <br>
+        Choose at least one question catalogue:
+        <br>
+        <br>
         {% for x in catalogue_names %}
-        <nobr><input type="checkbox" name="catalogues[]" value="{{ x }}"> {{ x }}</nobr>
+        <nobr><input type="checkbox" name="catalogues[]" value="{{ x }}"> {{ x }} &nbsp;&nbsp;&nbsp;</nobr>
         {% endfor %}
         <br>
         <br>

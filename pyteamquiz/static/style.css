@@ -2,7 +2,7 @@ html, body {
     margin: 0;
     padding: 0;
 	scroll-behavior: smooth;
-    background-color: darkslategrey;
+    background-color: #fff2df;
 }
 
 body {
@@ -40,11 +40,12 @@ input[type=text]{
 .header {
     width: 100vw;
     text-align: center;
-    background-color: #333333;
+    background-color: #181818;
     color: aliceblue;
     padding-top: 50px;
     padding-bottom: 50px;
     margin-bottom: 20px;
+    box-shadow: 0px 4px 2px #0f0f0f;
 }
 
 /*
