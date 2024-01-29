@@ -15,3 +15,6 @@ class NotEnoughQuestionsError(Exception):
 
 class NotEnoughTeamsError(Exception):
     pass
+
+class TeamNameError(Exception):
+    pass
