@@ -26,7 +26,7 @@ class Game():
                 raise TeamNameError("Team name must be between 1 and 30 chars.")
 
         # Ensure each player gets the same number of questions
-        if len(self.questions) <= len(self.teams):
+        if len(self.questions) < len(self.teams):
             raise NotEnoughQuestionsError("You have fewer questions than teams. Select more catalogues.")
         pick_questions = len(self.questions) - len(self.questions) % len(self.teams)
         self.questions = self.questions[:pick_questions]
