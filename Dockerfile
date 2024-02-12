@@ -17,5 +17,5 @@ WORKDIR /App
 RUN adduser --system --no-create-home herbert
 USER herbert
 
-# Change this if you want an other WSGI, or increase the number of workers
-ENTRYPOINT gunicorn -w 3 -b 0.0.0.0:8000 pyteamquiz.main:app
+# Change this if you want an other WSGI. Currently only one worker is supported.
+ENTRYPOINT gunicorn -w 1 -b 0.0.0.0:8000 pyteamquiz.main:app
