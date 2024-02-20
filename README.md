@@ -1,6 +1,6 @@
-# Open Web Quiz
+# pyTeamQuiz
 
-This is a small webservice for makeing a local quiz with your friends.
+This is a small webservice for making a local quiz with your friends.
 Run the webservice on a computer and open it in the browser of your smart TV or other device.
 
 ## Run in development

@@ -7,7 +7,7 @@ from pyteamquiz import catalogues
 import os
 
 
-def get_catalogue_1():
+def catalogue_1():
     content = """
 What is correct?;;A;;B;;C;;D
 What is correct?;;A;;B;;C;;D;;E
@@ -22,6 +22,6 @@ What is correct?;;A;;B;;C;;D;;E
     return catalogue
 
 def test_game_creation():
-    catalogues["Example.txt"] = get_catalogue_1()
-    token = service.new_game({"Example.txt"}, {"Team A", "Team B"})
+    catalogues["Example"] = catalogue_1()
+    token = service.new_game({"Example"}, {"Team A", "Team B"}, 1)
     assert service.get_current_question_text(token) == "What is correct?"
