@@ -8,10 +8,10 @@ def get_available_catalogues() -> List[str]:
     ret.sort()
     return ret
 
-def new_game(catalogue_names: Set[str], team_names: Set[str]) -> str:
+def new_game(catalogue_names: Set[str], team_names: Set[str], questions_per_team: int) -> str:
     token = secrets.token_hex(16)
     selected_catalogues = [catalogues[x] for x in catalogue_names]
-    games[token] = Game(selected_catalogues, team_names)
+    games[token] = Game(selected_catalogues, team_names, questions_per_team)
     return token
 
 def whose_turn(game_id: str) -> str:

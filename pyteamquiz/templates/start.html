@@ -12,11 +12,16 @@
         <input type="text" name="teams[]" placeholder="*Team 2" required><br>
         <input type="text" name="teams[]" placeholder="Team 3"><br>
         <input type="text" name="teams[]" placeholder="Team 4"><br>
-        <input type="text" name="teams[]" placeholder="Team 5"><br>
-        <br>
+        <input type="text" name="teams[]" placeholder="Team 5">
+        <br><br><br>
+
+        How many questions do you want per team?
+        <br><br>
+        <input type="number" min="1" max="15" value="5" name="q_per_team">
+        <br><br><br>
+
         Choose at least one question catalogue:
-        <br>
-        <br>
+        <br><br>
         {% for x in catalogue_names %}
         <nobr><input type="checkbox" name="catalogues[]" value="{{ x }}"> {{ x }} &nbsp;&nbsp;&nbsp;</nobr>
         {% endfor %}

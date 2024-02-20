@@ -4,7 +4,7 @@ from .question import QuestionCatalogueFile, Question
 from .errors import *
 
 class Game():
-    def __init__(self, catalgogues:Set[QuestionCatalogueFile], teams:Set[str]):
+    def __init__(self, catalgogues:Set[QuestionCatalogueFile], teams:Set[str], questions_per_team:int):
         self.questions = list()
         for catalogue in catalgogues:
             for q in catalogue.get_question_list():
@@ -25,11 +25,11 @@ class Game():
             if not 1 <= len(team) <= 30:
                 raise TeamNameError("Team name must be between 1 and 30 chars.")
 
-        # Ensure each player gets the same number of questions
-        if len(self.questions) < len(self.teams):
-            raise NotEnoughQuestionsError("You have fewer questions than teams. Select more catalogues.")
-        pick_questions = len(self.questions) - len(self.questions) % len(self.teams)
-        self.questions = self.questions[:pick_questions]
+        # Ensure each team gets the desired number of questions
+        questions_per_team = max(1, questions_per_team)
+        if len(self.questions) < len(self.teams) * questions_per_team:
+            raise NotEnoughQuestionsError("You have not enough questions in the selected catalogues. Select more catalogues.")
+        self.questions = self.questions[:(len(self.teams) * questions_per_team)]
 
         # Init
         self.round = 0

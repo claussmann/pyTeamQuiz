@@ -13,8 +13,9 @@ def start():
 def new_game():
     selected = set(filter(len, request.form.getlist('catalogues[]')))
     teams = set(filter(len, request.form.getlist('teams[]')))
+    questions_per_team = int(request.form.get('q_per_team'))
     try:
-        game_id = service.new_game(selected, teams)
+        game_id = service.new_game(selected, teams, questions_per_team)
     except (NotEnoughQuestionsError, NotEnoughTeamsError, TeamNameError) as e:
         return render_template('error.html', msg=str(e))
     return render_template('created.html', game_id=game_id)
